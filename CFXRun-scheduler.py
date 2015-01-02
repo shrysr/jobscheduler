@@ -37,7 +37,7 @@ normal_loc=r"Q:\Queueing_sys\Normal"
 long_loc=r"Q:\Queueing_sys\Long"
 completed_loc=r"Q:\Queueing_sys\Completed"
 single_cl_mode_loc=r"Q:\Queueing_sys\admin\onlyone.txt"
-hostlist_32=r'-par-dist "XX1*N, XX2*N2, XX3*N3, XX4*N4"'
+hostlist_32=r'-par-dist "IN-PU-1040*8, IN-PU-1001*8,IN-PU-1038*8 IN-PU-1002*8"'
 ansys_inst_loc=r'C:\Program Files\ANSYS Inc\v145\CFX\bin\cfx5solve'
 
 def move_command(file_loc1, file_loc2,current_location):
