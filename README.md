@@ -27,4 +27,4 @@ Setting up
 * A zip file of the folder structure as it is, is provided. It should be downloaded and unzipped to the desired location where the simulations will run and be stored.
 
 * System scheduler install is required, which will launch the python program every minute. This needs to be installed only on the master nodes.
->>>>>>> origin/master
+
