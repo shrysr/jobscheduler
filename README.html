@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Job-scheduler program</title>
+<meta name="author" content="(Shreyas Ragavan)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./engine/css/reveal.css"/>
+
+<link rel="stylesheet" href="./engine/css/theme/blood.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './engine/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Job-scheduler program</h1><h2 class="author">Shreyas Ragavan</h2><p class="date">Created: 2018-05-21 Mon 09:24</p>
+</section>
+
+
+<section>
+<section id="slide-orgb5bc801">
+<h2 id="orgb5bc801"><a href="https://github.com/shrysr/jobscheduler">Code On Github</a></h2>
+</section>
+</section>
+<section>
+<section id="slide-orge899d3d">
+<h2 id="orge899d3d">Introduction</h2>
+<p>
+This is a Python script for a portable, scalable job scheduler with
+multiple priorities - for ANSYS CFX simulations. The script was
+designed to be called every minute by an external scheduler
+program. 
+</p>
+
+<ul>
+<li>In the practical case, the free version of the software <a href="https://www.splinterware.com/products/scheduler.html">System
+Scheduler</a> was used to deploy the script successfully, for</li>
+
+</ul>
+<p>
+over 3 years, managing 2 computing clusters.
+</p>
+
+<p>
+Once called, the program basically loops through pre designated
+folders and lists .def files based on the <b>last modified</b> date
+available in Windows. The system interaction is via BASH scripts
+created via the Python code, as well as the python OS library. There
+are several in-built flags to support priority, pausing a particular
+cluster, logging data and troubleshooting.
+</p>
+
+<p>
+The idea behind the project was to create a multi-platform job
+scheduler for ANSYS CFX that has a balance between sophistication and
+ease of deployment (and management). Typically job schedulers and load
+balancing programs are relatively very sophisticated and complex to
+setup with several pre-requisites and constraints. Such complexity
+dictates expensive commercial support and licensing considerations.
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org03db367">
+<h2 id="org03db367">Problem Statement</h2>
+<p>
+A job scheduler or simulation management system was required to address the following:
+</p>
+
+<ul>
+<li>Optimum and continuous simulation solver license utilisation by all
+members of the team in a First-In-First-Out (FIFO) basis,</li>
+<li>Provision for dynamic or urgent priority jobs, as well as an
+interface to submit simulations or view job history.</li>
+<li>Optimisation and management of workload of simulation jobs
+facilitating overall project management and planning.</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgd8e7147">
+<h2 id="orgd8e7147">What the program accomplished</h2>
+<ul>
+<li>Allowed users to submit simulations by simply placing the input
+files in a particular folder location, which also served as a
+particular priority basket.</li>
+<li>Removed the need of creating manual scripts to submit multiple
+simulations and resolved inefficient license utilisation approaches.</li>
+<li>Facilitated a optimised approach to certain design cases, thus
+resulting in a 75% reduction in simulation time</li>
+<li>Enabled the use of consistent solver and memory utilisation
+parameters and settings, allowing efficient deployment and reducing
+inefficiencies due to errors.</li>
+<li>Allowed optimal or perfect utilisation of available licensing
+scheme, resulting in a significant increase in team output and
+productivity.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc06f95c">
+<h2 id="orgc06f95c">Tools used and links</h2>
+<ul>
+<li>Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.</li>
+
+<li>See the [Github Wiki](<a href="https://github.com/shrysr/jobscheduler/wiki/">https://github.com/shrysr/jobscheduler/wiki/</a>) for the project goals, algorithm and other details.</li>
+
+<li>[Code On Github](<a href="https://github.com/shrysr/jobscheduler">https://github.com/shrysr/jobscheduler</a>)</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org2432490">
+<h3 id="org2432490">sample code</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #268bd2; font-weight: bold;">import</span> os
+<span style="color: #af5fd7;">a</span> = os.chdir(os.pwd)
+<span style="color: #268bd2; font-weight: bold;">print</span>(a)
+</pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="./engine/lib/js/head.min.js"></script>
+<script src="./engine/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: true,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './engine/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: './engine/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './engine/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './engine/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './engine/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
