@@ -4,7 +4,7 @@
 #+author: Shreyas Ragavan
 #+OPTIONS: reveal_control:t reveal_progress:t, reveal_history:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
 
-
+* [[https://shrysr.github.io/jobscheduler/readme.html][View the presentation]]                                            :noexport:
 * [[https://github.com/shrysr/jobscheduler][Code On Github]]
 * Introduction
 
