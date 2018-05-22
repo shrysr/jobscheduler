@@ -7,9 +7,9 @@
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
-<link rel="stylesheet" href="./engine/css/reveal.css"/>
+<link rel="stylesheet" href="./reveal-js-engine/css/reveal.css"/>
 
-<link rel="stylesheet" href="./engine/css/theme/blood.css" id="theme"/>
+<link rel="stylesheet" href="./reveal-js-engine/css/theme/blood.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -18,7 +18,7 @@
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = './engine/css/print/pdf.css';
+        link.href = './reveal-js-engine/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
     }
 </script>
@@ -26,69 +26,34 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Job-scheduler program</h1><h2 class="author">Shreyas Ragavan</h2><p class="date">Created: 2018-05-21 Mon 09:24</p>
+<section id="sec-title-slide"><h1 class="title">Job-scheduler program</h1><h2 class="author">Shreyas Ragavan</h2><p class="date">Created: 2018-05-22 Tue 00:15</p>
 </section>
 
-
 <section>
-<section id="slide-orgb5bc801">
-<h2 id="orgb5bc801"><a href="https://github.com/shrysr/jobscheduler">Code On Github</a></h2>
-</section>
-</section>
-<section>
-<section id="slide-orge899d3d">
-<h2 id="orge899d3d">Introduction</h2>
+<section id="slide-org74c89c4">
+<h2 id="org74c89c4">Introduction</h2>
 <p>
-This is a Python script for a portable, scalable job scheduler with
-multiple priorities - for ANSYS CFX simulations. The script was
-designed to be called every minute by an external scheduler
-program. 
+Python script designed to:
 </p>
-
 <ul>
-<li>In the practical case, the free version of the software <a href="https://www.splinterware.com/products/scheduler.html">System
-Scheduler</a> was used to deploy the script successfully, for</li>
+<li>control the running of multiple distributed ANSYS CFX simulations of various types.</li>
+<li>run every minute via the free version of <a href="https://www.splinterware.com/products/scheduler.html">System Scheduler</a>.</li>
 
 </ul>
-<p>
-over 3 years, managing 2 computing clusters.
-</p>
-
-<p>
-Once called, the program basically loops through pre designated
-folders and lists .def files based on the <b>last modified</b> date
-available in Windows. The system interaction is via BASH scripts
-created via the Python code, as well as the python OS library. There
-are several in-built flags to support priority, pausing a particular
-cluster, logging data and troubleshooting.
-</p>
-
-<p>
-The idea behind the project was to create a multi-platform job
-scheduler for ANSYS CFX that has a balance between sophistication and
-ease of deployment (and management). Typically job schedulers and load
-balancing programs are relatively very sophisticated and complex to
-setup with several pre-requisites and constraints. Such complexity
-dictates expensive commercial support and licensing considerations.
-</p>
-
-
 </section>
 </section>
 <section>
-<section id="slide-org03db367">
-<h2 id="org03db367">Problem Statement</h2>
-<p>
-A job scheduler or simulation management system was required to address the following:
-</p>
-
+<section id="slide-orge765aa6">
+<h2 id="orge765aa6">Problem Statement</h2>
 <ul>
-<li>Optimum and continuous simulation solver license utilisation by all
-members of the team in a First-In-First-Out (FIFO) basis,</li>
-<li>Provision for dynamic or urgent priority jobs, as well as an
-interface to submit simulations or view job history.</li>
-<li>Optimisation and management of workload of simulation jobs
-facilitating overall project management and planning.</li>
+<li>Reliable and continuous software license utilisation in a First-In-First-Out (FIFO) basis, without manual intervention.</li>
+
+<li>Provision for:
+<ul>
+<li>dynamic / urgent priority jobs adapted to evolving workflows and project load.</li>
+<li>hassle free interface to submit simulations + view job history.</li>
+
+</ul></li>
 
 </ul>
 
@@ -96,16 +61,38 @@ facilitating overall project management and planning.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgd8e7147">
-<h2 id="orgd8e7147">What the program accomplished</h2>
+<section id="slide-org0d5b0df">
+<h2 id="org0d5b0df">Algorithm</h2>
+
+<div class="figure">
+<p><img src="./data/scheduler-algo.png" alt="scheduler-algo.png" height="300%," width="200%" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc314cdf">
+<h2 id="orgc314cdf">Results Achieved</h2>
 <ul>
-<li>Allowed users to submit simulations by simply placing the input
-files in a particular folder location, which also served as a
-particular priority basket.</li>
 <li>Removed the need of creating manual scripts to submit multiple
 simulations and resolved inefficient license utilisation approaches.</li>
-<li>Facilitated a optimised approach to certain design cases, thus
-resulting in a 75% reduction in simulation time</li>
+<li>Enabled multi-priority, simplified job submission</li>
+<li>Significantly improved project management and output.</li>
+
+</ul>
+<ul class="fragment highlight-red">
+<li>Increased software license utilisation by <b>50+%</b>.</li>
+<li>Facilitated saving 40min (75%) in a critical design step.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orga5ed87c">
+<h2 id="orga5ed87c">Results Achieved</h2>
+<ul>
 <li>Enabled the use of consistent solver and memory utilisation
 parameters and settings, allowing efficient deployment and reducing
 inefficiencies due to errors.</li>
@@ -118,34 +105,29 @@ productivity.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgc06f95c">
-<h2 id="orgc06f95c">Tools used and links</h2>
+<section id="slide-org8f48ed6">
+<h2 id="org8f48ed6">Relevant Links</h2>
+<div class="outline-text-2" id="text-org8f48ed6">
+</div>
+</section>
+<section id="slide-org342d867">
+<h3 id="org342d867"><a href="https://github.com/shrysr/jobscheduler">Code On Github</a></h3>
+</section>
+<section id="slide-orgd6d625f">
+<h3 id="orgd6d625f">Detailed notes</h3>
+</section>
+<section id="slide-org7cf25f6">
+<h3 id="org7cf25f6">Tools used and links</h3>
 <ul>
 <li>Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.</li>
 
-<li>See the [Github Wiki](<a href="https://github.com/shrysr/jobscheduler/wiki/">https://github.com/shrysr/jobscheduler/wiki/</a>) for the project goals, algorithm and other details.</li>
-
-<li>[Code On Github](<a href="https://github.com/shrysr/jobscheduler">https://github.com/shrysr/jobscheduler</a>)</li>
-
 </ul>
-
-
-</section>
-<section id="slide-org2432490">
-<h3 id="org2432490">sample code</h3>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #268bd2; font-weight: bold;">import</span> os
-<span style="color: #af5fd7;">a</span> = os.chdir(os.pwd)
-<span style="color: #268bd2; font-weight: bold;">print</span>(a)
-</pre>
-</div>
 </section>
 </section>
 </div>
 </div>
-<script src="./engine/lib/js/head.min.js"></script>
-<script src="./engine/js/reveal.js"></script>
+<script src="./reveal-js-engine/lib/js/head.min.js"></script>
+<script src="./reveal-js-engine/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
@@ -160,6 +142,8 @@ slideNumber: 'c',
 rollingLinks: true,
 keyboard: true,
 overview: true,
+minScale: 0.50,
+maxScale: 2.40,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
@@ -172,11 +156,9 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: './engine/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: './engine/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './engine/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: './engine/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: './engine/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+{ src: './reveal-js-engine/plugin/menu/menu.js', async: true },
+{ src: './reveal-js-engine/plugin/toolbar/toolbar.js', async: true },
+ { src: './reveal-js-engine/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
 });
 </script>
 </body>

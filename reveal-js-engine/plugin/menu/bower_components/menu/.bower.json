@@ -1,0 +1,15 @@
+{
+  "name": "menu",
+  "homepage": "https://github.com/coderaiser/menu-io",
+  "version": "2.0.0",
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.0",
+    "commit": "21604c1676b0b636cdebd7538433f0fd0c21ca95"
+  },
+  "_source": "https://github.com/coderaiser/menu-io.git",
+  "_target": "^2.0.0",
+  "_originalSource": "menu",
+  "_direct": true
+}

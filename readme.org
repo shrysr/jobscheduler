@@ -2,20 +2,56 @@
 #+options: num:nil toc:nil 
 #+title: Job-scheduler program
 #+author: Shreyas Ragavan
-#+OPTIONS: reveal_control:t reveal_progress:t, reveal_history:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t
+#+OPTIONS: reveal_control:t reveal_progress:t, reveal_history:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t 
+#+REVEAL_PLUGINS: (zoom)
+#+REVEAL_MAX_SCALE: 2.4
+#+REVEAL_MIN_SCALE: 0.5
 
 * [[https://shrysr.github.io/jobscheduler/readme.html][View the presentation]]                                            :noexport:
-* [[https://github.com/shrysr/jobscheduler][Code On Github]]
 * Introduction
+Python script designed to:
+- control the running of multiple distributed ANSYS CFX simulations of various types.
+- run every minute via the free version of [[https://www.splinterware.com/products/scheduler.html][System Scheduler]]. 
+* Problem Statement 
 
-This is a Python script for a portable, scalable job scheduler with
-multiple priorities - for ANSYS CFX simulations. The script was
-designed to be called every minute by an external scheduler
-program. 
+- Reliable and continuous software license utilisation in a First-In-First-Out (FIFO) basis, without manual intervention.
 
-- In the practical case, the free version of the software [[https://www.splinterware.com/products/scheduler.html][System
-  Scheduler]] was used to deploy the script successfully, for
-over 3 years, managing 2 computing clusters.
+- Provision for:
+  - dynamic / urgent priority jobs adapted to evolving workflows and project load.
+  - hassle free interface to submit simulations + view job history.
+
+
+* Algorithm
+#+ATTR_HTML: :height 300%, :width 200%
+[[./data/scheduler-algo.png]]
+
+* Results Achieved 
+
+- Removed the need of creating manual scripts to submit multiple
+  simulations and resolved inefficient license utilisation approaches.
+- Enabled multi-priority, simplified job submission
+- Significantly improved project management and output.
+#+ATTR_REVEAL: :frag highlight-red
+- Increased software license utilisation by *50+%*.
+- Facilitated saving 40min (75%) in a critical design step.
+
+* Results Achieved 
+
+- Enabled the use of consistent solver and memory utilisation
+  parameters and settings, allowing efficient deployment and reducing
+  inefficiencies due to errors.
+- Allowed optimal or perfect utilisation of available licensing
+  scheme, resulting in a significant increase in team output and
+  productivity.
+
+* Relevant Links
+** [[https://github.com/shrysr/jobscheduler][Code On Github]]
+** Detailed notes
+** Tools used and links
+- Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.
+
+
+* Detailed Description notes                                       :noexport:
 
 Once called, the program basically loops through pre designated
 folders and lists .def files based on the *last modified* date
@@ -31,43 +67,6 @@ balancing programs are relatively very sophisticated and complex to
 setup with several pre-requisites and constraints. Such complexity
 dictates expensive commercial support and licensing considerations.
 
-
-* Problem Statement 
-A job scheduler or simulation management system was required to address the following:
-
-- Optimum and continuous simulation solver license utilisation by all
-  members of the team in a First-In-First-Out (FIFO) basis, 
-- Provision for dynamic or urgent priority jobs, as well as an
-  interface to submit simulations or view job history.
-- Optimisation and management of workload of simulation jobs
-  facilitating overall project management and planning.
-
-
-* What the program accomplished 
-
-- Allowed users to submit simulations by simply placing the input
-  files in a particular folder location, which also served as a
-  particular priority basket.
-- Removed the need of creating manual scripts to submit multiple
-  simulations and resolved inefficient license utilisation approaches.
-- Facilitated a optimised approach to certain design cases, thus
-  resulting in a 75% reduction in simulation time
-- Enabled the use of consistent solver and memory utilisation
-  parameters and settings, allowing efficient deployment and reducing
-  inefficiencies due to errors.
-- Allowed optimal or perfect utilisation of available licensing
-  scheme, resulting in a significant increase in team output and
-  productivity.
-
-* Tools used and links
-
-- Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.
-
-- See the [Github Wiki](https://github.com/shrysr/jobscheduler/wiki/) for the project goals, algorithm and other details.
-
-- [Code On Github](<https://github.com/shrysr/jobscheduler>)
-
-
 ** sample code
 
 #+BEGIN_SRC python :results output org drawer
@@ -75,6 +74,7 @@ import os
 a = os.chdir(os.pwd)
 print(a)
 #+END_SRC
+
 
 * Archive                                                          :noexport:
 CFX Job Scheduler
