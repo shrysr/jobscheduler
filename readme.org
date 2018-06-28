@@ -1,28 +1,65 @@
 #+REVEAL_THEME: blood
 #+options: num:nil toc:nil 
-#+title: Job-scheduler program
+#+title: Job scheduler
 #+author: Shreyas Ragavan
 #+OPTIONS: reveal_control:t reveal_progress:t, reveal_history:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t 
 #+REVEAL_PLUGINS: (zoom)
 #+REVEAL_MAX_SCALE: 2.5
 #+REVEAL_MIN_SCALE: 0.5
+#+EXPORT_FILE_NAME: index.html
 
-* [[https://shrysr.github.io/jobscheduler/readme.html][View the presentation]]                                            :noexport:
+* [[https://shrysr.github.io/jobscheduler/index.html][View the presentation]]                                            :noexport:
+
+* Quick note
+This presentation was created using [[https://revealjs.com/][reveal.js]], leveraging the
+[[http://jr0cket.co.uk/slides/revealjs.html][org-reveal]] package in [[https://www.gnu.org/software/emacs/][Emacs]].
+
+#+ATTR_REVEAL: :frag roll-in
+- Use the keyboard's arrow keys or swipe to navigate.
+- Navigate left to right for main slides
+- Navigate/Swipe downwards for sub-slides (if any)
+- There's a menu key at the bottom right corner to jump to slides
+
+* Conception
+- Available distributed simulation solver licenses were drastically under-utilised
+  due to the lack of a cohesive management system.
+
+- Team workflow and productivity was severely impacted due manual
+  firing of simulations.
+
+* Conception ... 
+- It was extremely cumbersome to submit test simulations to facilitate
+  learning!
+
+- Potentially: A huge change could be achieved with a simple system to
+  fire simulations *24/7, *utilizing the entire capacity* through a
+  logical and optimized basis.
 
 * Project Goals
 - Reliable and continuous software license utilisation in a
     First-In-First-Out (FIFO) basis, without manual intervention.
 
 - Streamlined project management and resource utilisation, keeping
-  track of multiple distributed ANSYS CFX simulations of various types
+  track of multiple, distributed ANSYS CFX simulations of various types
   and priorities.
 
+* Project Goals ...
 - Customised workflow and simplified interface to submit simulations
   for the entire team.
 
-* Algorithm
+* Psuedo Algorithm
 #+ATTR_HTML: :height 300%, :width 200%
 [[./data/scheduler-algo.png]]
+
+* Algorithm description
+
+Hierarchy based logic: loop through a set order of folders and run the
+latest simulation files. The folders are meant to serve as multiple
+priority levels, and at times simulation size filters.
+- For example, a Small (short) run's priority would be higher than a
+  non-priority, larger job at any time
+- And then a *Priority* folder whose runs would run first no matter
+  what.
 
 * Results Achieved 
 
@@ -31,7 +68,7 @@
 
 - Saved *40min (75%)* in a critical design step.
 
-#+ATTR_REVEAL: :frag (roll-in)
+#+ATTR_REVEAL: :frag roll-in
 - Eliminated repetitive manual script setups to submit multiple simulations.
 
 - Significantly improved project management and output.
@@ -47,33 +84,67 @@
   productivity.
 
 * Relevant Links
-** [[https://github.com/shrysr/jobscheduler][Code On Github]]
-** Detailed notes
 ** Tools used and links
 - Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.
-
+** [[https://github.com/shrysr/jobscheduler][Code On Github]]
+** [[https://github.com/shrysr/jobscheduler#detailed-notes-1][Detailed notes]]
 * Detailed notes                                                   :noexport:
+:PROPERTIES:
+:ID:       62BF46EC-36C0-40BE-9A0F-30B3A8DC69A0
+:END:
+
+** In a nutshell 
+
+This code was originally developed for my R&D Center @ *Wilo SE*. A
+modified (and more generic) version of the same is available here. It
+is simply meant to fire away simulations, triggered every minute by a scheduler
+software. (Tested with the free version of [[https://www.splinterware.com/products/scheduler.html][*System Scheduler]]*).
+
+This was achieved through a simple python script logic: loop through a
+set order of folders and run the latest simulation files. The folders
+are meant to serve as multiple priority levels, and at times
+simulation size filters.
+- For example, a small (short) run's priority would be higher than a
+  non-priority, larger job at any time
+- And then a Priority folder whose runs would run first no matter
+  what.
+
+** Objective
 
 The idea behind the project was to create a multi-platform job
 scheduler for ANSYS CFX that has a balance between sophistication and
 ease of deployment (and management), and of course customised to the
-team workflow.
+team workflow. 
 
-Typically job schedulers and load balancing programs are relatively
+Considering the numerous IT constraints and the situation at hand,
+this script just ticked all the boxes rather elegantly.
+
+Open source solutions do exist. As of today, my approach would be
+different and I would leverage Pandas in python for a database of
+simulations and other automation tools like Airflow.
+
+Job schedulers and load balancing programs are relatively
 sophisticated and complex to setup with several pre-requisites and
 constraints. Such complexity dictates expensive commercial support and
-licensing considerations.
+licensing considerations for a team requiring a reliable system.
+
+** How it works
 
 Once called, the program basically loops through pre designated
-folders and lists .def files based on the *last modified* date
-available in Windows. The system interaction is via BASH scripts
-created via the Python code, as well as the python OS library. There
-are several in-built flags to support priority, pausing a particular
-cluster, logging data and troubleshooting.
+folders and lists .def files based on the *last modified* date available
+in Windows. 
+
+The system interaction is via BASH scripts created via the Python
+code, as well as the python OS library. Using this approach, with
+flags to check the program status was just simpler than building some
+sort of constantly running python daemon.
+
+There are several in-built flags to support setting priorities,
+pausing a particular cluster, logging data and troubleshooting.
 
 * Archive                                                          :noexport:
 
-This code was originally developed for my R&D Center  @ *Wilo SE*. A modified (and more generic) version of the same is available here. It is simply meant to fire away simulations, triggered by a scheduler software. (Tested with the free version of *System Scheduler*).
+
 
 - run every minute via the free version of [[https://www.splinterware.com/products/scheduler.html][System Scheduler]]. 
 
