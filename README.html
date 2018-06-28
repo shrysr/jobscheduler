@@ -26,43 +26,30 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Job-scheduler program</h1><h2 class="author">Shreyas Ragavan</h2><p class="date">Created: 2018-05-22 Tue 00:15</p>
+<section id="sec-title-slide"><h1 class="title">Job-scheduler program</h1><h2 class="author">Shreyas Ragavan</h2><p class="date">Created: 2018-05-22 Tue 11:36</p>
 </section>
 
 <section>
-<section id="slide-org74c89c4">
-<h2 id="org74c89c4">Introduction</h2>
-<p>
-Python script designed to:
-</p>
+<section id="slide-orgf5434cc">
+<h2 id="orgf5434cc">Project Goals</h2>
 <ul>
-<li>control the running of multiple distributed ANSYS CFX simulations of various types.</li>
-<li>run every minute via the free version of <a href="https://www.splinterware.com/products/scheduler.html">System Scheduler</a>.</li>
+<li>Reliable and continuous software license utilisation in a
+First-In-First-Out (FIFO) basis, without manual intervention.</li>
 
-</ul>
-</section>
-</section>
-<section>
-<section id="slide-orge765aa6">
-<h2 id="orge765aa6">Problem Statement</h2>
-<ul>
-<li>Reliable and continuous software license utilisation in a First-In-First-Out (FIFO) basis, without manual intervention.</li>
+<li>Streamlined project management and resource utilisation, keeping
+track of multiple distributed ANSYS CFX simulations of various types
+and priorities.</li>
 
-<li>Provision for:
-<ul>
-<li>dynamic / urgent priority jobs adapted to evolving workflows and project load.</li>
-<li>hassle free interface to submit simulations + view job history.</li>
-
-</ul></li>
+<li>Customised workflow and simplified interface to submit simulations
+for the entire team.</li>
 
 </ul>
 
-
 </section>
 </section>
 <section>
-<section id="slide-org0d5b0df">
-<h2 id="org0d5b0df">Algorithm</h2>
+<section id="slide-org6c1440b">
+<h2 id="org6c1440b">Algorithm</h2>
 
 <div class="figure">
 <p><img src="./data/scheduler-algo.png" alt="scheduler-algo.png" height="300%," width="200%" />
@@ -72,31 +59,33 @@ Python script designed to:
 </section>
 </section>
 <section>
-<section id="slide-orgc314cdf">
-<h2 id="orgc314cdf">Results Achieved</h2>
-<ul>
-<li>Removed the need of creating manual scripts to submit multiple
-simulations and resolved inefficient license utilisation approaches.</li>
-<li>Enabled multi-priority, simplified job submission</li>
-<li>Significantly improved project management and output.</li>
+<section id="slide-org57b75ed">
+<h2 id="org57b75ed">Results Achieved</h2>
+<ul class="fragment highlight-blue">
+<li>Increased software license utilisation by <b>50+%</b>.</li>
+
+<li>Saved <b>40min (75%)</b> in a critical design step.</li>
 
 </ul>
-<ul class="fragment highlight-red">
-<li>Increased software license utilisation by <b>50+%</b>.</li>
-<li>Facilitated saving 40min (75%) in a critical design step.</li>
+
+<ul>
+<li class="fragment roll-in">Eliminated repetitive manual script setups to submit multiple simulations.</li>
+
+<li class="fragment roll-in">Significantly improved project management and output.</li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orga5ed87c">
-<h2 id="orga5ed87c">Results Achieved</h2>
+<section id="slide-org8280e0f">
+<h2 id="org8280e0f">Results Achieved</h2>
 <ul>
-<li>Enabled the use of consistent solver and memory utilisation
+<li class="fragment roll-in">Enabled the use of consistent solver and memory utilisation
 parameters and settings, allowing efficient deployment and reducing
 inefficiencies due to errors.</li>
-<li>Allowed optimal or perfect utilisation of available licensing
+
+<li class="fragment roll-in">Allowed optimal or perfect utilisation of available licensing
 scheme, resulting in a significant increase in team output and
 productivity.</li>
 
@@ -105,19 +94,19 @@ productivity.</li>
 </section>
 </section>
 <section>
-<section id="slide-org8f48ed6">
-<h2 id="org8f48ed6">Relevant Links</h2>
-<div class="outline-text-2" id="text-org8f48ed6">
+<section id="slide-org774d500">
+<h2 id="org774d500">Relevant Links</h2>
+<div class="outline-text-2" id="text-org774d500">
 </div>
 </section>
-<section id="slide-org342d867">
-<h3 id="org342d867"><a href="https://github.com/shrysr/jobscheduler">Code On Github</a></h3>
+<section id="slide-orgab29448">
+<h3 id="orgab29448"><a href="https://github.com/shrysr/jobscheduler">Code On Github</a></h3>
 </section>
-<section id="slide-orgd6d625f">
-<h3 id="orgd6d625f">Detailed notes</h3>
+<section id="slide-org83e8fa8">
+<h3 id="org83e8fa8">Detailed notes</h3>
 </section>
-<section id="slide-org7cf25f6">
-<h3 id="org7cf25f6">Tools used and links</h3>
+<section id="slide-org9b46db3">
+<h3 id="org9b46db3">Tools used and links</h3>
 <ul>
 <li>Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.</li>
 
@@ -143,7 +132,7 @@ rollingLinks: true,
 keyboard: true,
 overview: true,
 minScale: 0.50,
-maxScale: 2.40,
+maxScale: 2.50,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none

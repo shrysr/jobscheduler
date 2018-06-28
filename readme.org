@@ -4,22 +4,21 @@
 #+author: Shreyas Ragavan
 #+OPTIONS: reveal_control:t reveal_progress:t, reveal_history:t reveal_rolling_links:t reveal_keyboard:t reveal_overview:t 
 #+REVEAL_PLUGINS: (zoom)
-#+REVEAL_MAX_SCALE: 2.4
+#+REVEAL_MAX_SCALE: 2.5
 #+REVEAL_MIN_SCALE: 0.5
 
 * [[https://shrysr.github.io/jobscheduler/readme.html][View the presentation]]                                            :noexport:
-* Introduction
-Python script designed to:
-- control the running of multiple distributed ANSYS CFX simulations of various types.
-- run every minute via the free version of [[https://www.splinterware.com/products/scheduler.html][System Scheduler]]. 
-* Problem Statement 
 
-- Reliable and continuous software license utilisation in a First-In-First-Out (FIFO) basis, without manual intervention.
+* Project Goals
+- Reliable and continuous software license utilisation in a
+    First-In-First-Out (FIFO) basis, without manual intervention.
 
-- Provision for:
-  - dynamic / urgent priority jobs adapted to evolving workflows and project load.
-  - hassle free interface to submit simulations + view job history.
+- Streamlined project management and resource utilisation, keeping
+  track of multiple distributed ANSYS CFX simulations of various types
+  and priorities.
 
+- Customised workflow and simplified interface to submit simulations
+  for the entire team.
 
 * Algorithm
 #+ATTR_HTML: :height 300%, :width 200%
@@ -27,19 +26,22 @@ Python script designed to:
 
 * Results Achieved 
 
-- Removed the need of creating manual scripts to submit multiple
-  simulations and resolved inefficient license utilisation approaches.
-- Enabled multi-priority, simplified job submission
-- Significantly improved project management and output.
-#+ATTR_REVEAL: :frag highlight-red
+#+ATTR_REVEAL: :frag highlight-blue
 - Increased software license utilisation by *50+%*.
-- Facilitated saving 40min (75%) in a critical design step.
+
+- Saved *40min (75%)* in a critical design step.
+
+#+ATTR_REVEAL: :frag (roll-in)
+- Eliminated repetitive manual script setups to submit multiple simulations.
+
+- Significantly improved project management and output.
 
 * Results Achieved 
-
+#+ATTR_REVEAL: :frag (roll-in)
 - Enabled the use of consistent solver and memory utilisation
   parameters and settings, allowing efficient deployment and reducing
   inefficiencies due to errors.
+
 - Allowed optimal or perfect utilisation of available licensing
   scheme, resulting in a significant increase in team output and
   productivity.
@@ -50,8 +52,17 @@ Python script designed to:
 ** Tools used and links
 - Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.
 
+* Detailed notes                                                   :noexport:
 
-* Detailed Description notes                                       :noexport:
+The idea behind the project was to create a multi-platform job
+scheduler for ANSYS CFX that has a balance between sophistication and
+ease of deployment (and management), and of course customised to the
+team workflow.
+
+Typically job schedulers and load balancing programs are relatively
+sophisticated and complex to setup with several pre-requisites and
+constraints. Such complexity dictates expensive commercial support and
+licensing considerations.
 
 Once called, the program basically loops through pre designated
 folders and lists .def files based on the *last modified* date
@@ -60,47 +71,21 @@ created via the Python code, as well as the python OS library. There
 are several in-built flags to support priority, pausing a particular
 cluster, logging data and troubleshooting.
 
-The idea behind the project was to create a multi-platform job
-scheduler for ANSYS CFX that has a balance between sophistication and
-ease of deployment (and management). Typically job schedulers and load
-balancing programs are relatively very sophisticated and complex to
-setup with several pre-requisites and constraints. Such complexity
-dictates expensive commercial support and licensing considerations.
-
-** sample code
-
-#+BEGIN_SRC python :results output org drawer
-import os
-a = os.chdir(os.pwd)
-print(a)
-#+END_SRC
-
-
 * Archive                                                          :noexport:
-CFX Job Scheduler
-============
-
-Python scripts for portable, scalable job scheduler with multiple priorities - for ANSYS CFX.
 
 This code was originally developed for my R&D Center  @ *Wilo SE*. A modified (and more generic) version of the same is available here. It is simply meant to fire away simulations, triggered by a scheduler software. (Tested with the free version of *System Scheduler*).
+
+- run every minute via the free version of [[https://www.splinterware.com/products/scheduler.html][System Scheduler]]. 
 
 The program basically loops through pre designated folders and lists .def files based on the *last modified* date available in Windows. The system interaction is via BASH scripts created via the Python code.
 
 This is a project in progress, with the goal of becoming a multi-platform job scheduler for ANSYS CFX that has a balance between sophistication and ease of deployment. Current job schedulers are relatively very sophisticated and complex to setup with several pre-requisites. As of now, this program is ideally suited for individuals and small teams, with 1-3 computing clusters working in tandem.
 
-See the Wiki for the project goals, algorithm and other details.
 =======
 ** Python based portable, scalable job scheduler with multiple priorities - for ANSYS CFX.
 ** Written with Python 2.7, using portable python, spyder, Notepad ++ and Sublime Text 3.
-** This is a project in progress, with the goal of becoming a multi-platform job scheduler for ANSYS CFX that has a balance between sophistication and ease of deployment. Current job schedulers are relatively very sophisticated and complex to setup with several pre-requisites. As of now, this program is ideally suited for individuals and small teams, with 1-3 computing clusters working in tandem.
-
 ** See the [Wiki](https://github.com/shrysr/jobscheduler/wiki/) for the project goals, algorithm and other details.
 
-** Issues and desired enhancements are listed
-
-
-Setting up
-=====================
 ** The program doesn't just work out of the box (for now). It needs some manual setting up. However, once setup - it should keep running without any problems.
 
 ** A zip file of the folder structure as it is, is provided. It should be downloaded and unzipped to the desired location where the simulations will run and be stored.
