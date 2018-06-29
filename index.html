@@ -26,33 +26,38 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Job scheduler</h1><h2 class="author">Shreyas Ragavan</h2><p class="date">Created: 2018-06-28 Thu 14:52</p>
+<section id="sec-title-slide"><h1 class="title">Job scheduler</h1><h2 class="author">Shreyas Ragavan</h2><p class="date">Created: 2018-06-28 Thu 23:28</p>
 </section>
 
 <section>
-<section id="slide-org1058b42">
-<h2 id="org1058b42">Quick note</h2>
+<section id="slide-orgc177c7f">
+<h2 id="orgc177c7f">Quick note</h2>
 <p>
 This presentation was created using <a href="https://revealjs.com/">reveal.js</a>, leveraging the
 <a href="http://jr0cket.co.uk/slides/revealjs.html">org-reveal</a> package in <a href="https://www.gnu.org/software/emacs/">Emacs</a>.
 </p>
 
+<p class="fragment highlight-blue">
+Type '?' to see a list of the keyboard shortcuts. 
+</p>
+
 <ul class="fragment roll-in">
-<li>Use the keyboard's arrow keys or swipe to navigate.</li>
-<li>Navigate left to right for main slides</li>
+<li>Swipe or use the arrow keys / n / space to navigate.</li>
+<li>Navigate/Swipe horizontally for main slides</li>
 <li>Navigate/Swipe downwards for sub-slides (if any)</li>
-<li>There's a menu key at the bottom right corner to jump to slides</li>
+<li>Menu key (bottom right corner) to jump to slides.</li>
+<li>Hit 'o' for an overview of the slides.</li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgc401dc1">
-<h2 id="orgc401dc1">Conception</h2>
+<section id="slide-orge74ec66">
+<h2 id="orge74ec66">Conception</h2>
 <ul>
 <li>Available distributed simulation solver licenses were drastically under-utilised
-due to the lack of a cohesive management system.</li>
+due to the lack of a cohesive management system to run distributed simulations.</li>
 
 <li>Team workflow and productivity was severely impacted due manual
 firing of simulations.</li>
@@ -62,14 +67,14 @@ firing of simulations.</li>
 </section>
 </section>
 <section>
-<section id="slide-org46d5362">
-<h2 id="org46d5362">Conception &#x2026;</h2>
+<section id="slide-orgb88aad2">
+<h2 id="orgb88aad2">Conception &#x2026;</h2>
 <ul>
 <li>It was extremely cumbersome to submit test simulations to facilitate
 learning!</li>
 
 <li>Potentially: A huge change could be achieved with a simple system to
-fire simulations <b>24/7, *utilizing the entire capacity</b> through a
+fire simulations <b>24/7, utilizing the entire capacity</b> through a
 logical and optimized basis.</li>
 
 </ul>
@@ -77,10 +82,10 @@ logical and optimized basis.</li>
 </section>
 </section>
 <section>
-<section id="slide-org9e4c61f">
-<h2 id="org9e4c61f">Project Goals</h2>
+<section id="slide-orga747914">
+<h2 id="orga747914">Project Goals</h2>
 <ul>
-<li>Reliable and continuous software license utilisation in a
+<li>Reliable, automated and continuous software license utilisation in a
 First-In-First-Out (FIFO) basis, without manual intervention.</li>
 
 <li>Streamlined project management and resource utilisation, keeping
@@ -92,8 +97,8 @@ and priorities.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgbd4e98c">
-<h2 id="orgbd4e98c">Project Goals &#x2026;</h2>
+<section id="slide-org0ecd6cb">
+<h2 id="org0ecd6cb">Project Goals &#x2026;</h2>
 <ul>
 <li>Customised workflow and simplified interface to submit simulations
 for the entire team.</li>
@@ -103,8 +108,8 @@ for the entire team.</li>
 </section>
 </section>
 <section>
-<section id="slide-org76bc1f5">
-<h2 id="org76bc1f5">Psuedo Algorithm</h2>
+<section id="slide-orgeb04040">
+<h2 id="orgeb04040">Pseudo Algorithm</h2>
 
 <div class="figure">
 <p><img src="./data/scheduler-algo.png" alt="scheduler-algo.png" height="300%," width="200%" />
@@ -114,8 +119,8 @@ for the entire team.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgb69766a">
-<h2 id="orgb69766a">Algorithm description</h2>
+<section id="slide-org6de4186">
+<h2 id="org6de4186">Algorithm description</h2>
 <p>
 Hierarchy based logic: loop through a set order of folders and run the
 latest simulation files. The folders are meant to serve as multiple
@@ -132,8 +137,8 @@ what.</li>
 </section>
 </section>
 <section>
-<section id="slide-org7581c72">
-<h2 id="org7581c72">Results Achieved</h2>
+<section id="slide-orge9487e6">
+<h2 id="orge9487e6">Results Achieved</h2>
 <ul class="fragment highlight-blue">
 <li>Increased software license utilisation by <b>50+%</b>.</li>
 
@@ -151,8 +156,8 @@ what.</li>
 </section>
 </section>
 <section>
-<section id="slide-orgc7ad2ee">
-<h2 id="orgc7ad2ee">Results Achieved</h2>
+<section id="slide-org0e1bfb6">
+<h2 id="org0e1bfb6">Results Achieved &#x2026;</h2>
 <ul>
 <li class="fragment roll-in">Enabled the use of consistent solver and memory utilisation
 parameters and settings, allowing efficient deployment and reducing
@@ -167,23 +172,28 @@ productivity.</li>
 </section>
 </section>
 <section>
-<section id="slide-org457a206">
-<h2 id="org457a206">Relevant Links</h2>
-<div class="outline-text-2" id="text-org457a206">
+<section id="slide-org47e87df">
+<h2 id="org47e87df">Relevant Links / Information</h2>
+<div class="outline-text-2" id="text-org47e87df">
 </div>
 </section>
-<section id="slide-org0834efe">
-<h3 id="org0834efe">Tools used and links</h3>
+<section id="slide-org1f2d485">
+<h3 id="org1f2d485">Tools used</h3>
 <ul>
 <li>Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.</li>
+<li><a href="https://www.splinterware.com/products/scheduler.html">System Scheduler</a></li>
+<li>Documentation and presentation re-prepared using Emacs and org-mode and org-reveal at a later time.</li>
 
 </ul>
 </section>
-<section id="slide-org9df191a">
-<h3 id="org9df191a"><a href="https://github.com/shrysr/jobscheduler">Code On Github</a></h3>
+<section id="slide-org6275cf7">
+<h3 id="org6275cf7"><a href="https://github.com/shrysr/jobscheduler">Code On Github</a></h3>
 </section>
-<section id="slide-orgbdfe8b6">
-<h3 id="orgbdfe8b6"><a href="https://github.com/shrysr/jobscheduler#detailed-notes-1">Detailed notes</a></h3>
+<section id="slide-orgc5a762b">
+<h3 id="orgc5a762b"><a href="https://github.com/shrysr/jobscheduler#detailed-notes-1">Detailed notes</a></h3>
+</section>
+<section id="slide-org45d1448">
+<h3 id="org45d1448"><a href="https://github.com/shrysr/jobscheduler/wiki">Wiki</a></h3>
 </section>
 </section>
 </div>

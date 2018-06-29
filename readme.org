@@ -14,15 +14,19 @@
 This presentation was created using [[https://revealjs.com/][reveal.js]], leveraging the
 [[http://jr0cket.co.uk/slides/revealjs.html][org-reveal]] package in [[https://www.gnu.org/software/emacs/][Emacs]].
 
+#+ATTR_REVEAL: :frag highlight-blue
+Type '?' to see a list of the keyboard shortcuts. 
+
 #+ATTR_REVEAL: :frag roll-in
-- Use the keyboard's arrow keys or swipe to navigate.
-- Navigate left to right for main slides
+- Swipe or use the arrow keys / n / space to navigate.
+- Navigate/Swipe horizontally for main slides
 - Navigate/Swipe downwards for sub-slides (if any)
-- There's a menu key at the bottom right corner to jump to slides
+- Menu key (bottom right corner) to jump to slides.
+- Hit 'o' for an overview of the slides. 
 
 * Conception
 - Available distributed simulation solver licenses were drastically under-utilised
-  due to the lack of a cohesive management system.
+  due to the lack of a cohesive management system to run distributed simulations.
 
 - Team workflow and productivity was severely impacted due manual
   firing of simulations.
@@ -32,11 +36,11 @@ This presentation was created using [[https://revealjs.com/][reveal.js]], levera
   learning!
 
 - Potentially: A huge change could be achieved with a simple system to
-  fire simulations *24/7, *utilizing the entire capacity* through a
+  fire simulations *24/7, utilizing the entire capacity* through a
   logical and optimized basis.
 
 * Project Goals
-- Reliable and continuous software license utilisation in a
+- Reliable, automated and continuous software license utilisation in a
     First-In-First-Out (FIFO) basis, without manual intervention.
 
 - Streamlined project management and resource utilisation, keeping
@@ -47,7 +51,7 @@ This presentation was created using [[https://revealjs.com/][reveal.js]], levera
 - Customised workflow and simplified interface to submit simulations
   for the entire team.
 
-* Psuedo Algorithm
+* Pseudo Algorithm
 #+ATTR_HTML: :height 300%, :width 200%
 [[./data/scheduler-algo.png]]
 
@@ -73,7 +77,7 @@ priority levels, and at times simulation size filters.
 
 - Significantly improved project management and output.
 
-* Results Achieved 
+* Results Achieved ...
 #+ATTR_REVEAL: :frag (roll-in)
 - Enabled the use of consistent solver and memory utilisation
   parameters and settings, allowing efficient deployment and reducing
@@ -83,11 +87,14 @@ priority levels, and at times simulation size filters.
   scheme, resulting in a significant increase in team output and
   productivity.
 
-* Relevant Links
-** Tools used and links
+* Relevant Links / Information
+** Tools used
 - Written with Python 2.7, using portable python, Spyder, Notepad ++ and Sublime Text 3.
+- [[https://www.splinterware.com/products/scheduler.html][System Scheduler]]
+- Documentation and presentation re-prepared using Emacs and org-mode and org-reveal at a later time.
 ** [[https://github.com/shrysr/jobscheduler][Code On Github]]
 ** [[https://github.com/shrysr/jobscheduler#detailed-notes-1][Detailed notes]]
+** [[https://github.com/shrysr/jobscheduler/wiki][Wiki]]
 * Detailed notes                                                   :noexport:
 :PROPERTIES:
 :ID:       62BF46EC-36C0-40BE-9A0F-30B3A8DC69A0
